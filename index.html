@@ -671,16 +671,6 @@
                 <input type="date" id="birthDate">
             </div>
             
-            <div class="form-group">
-                <label>写真</label>
-                <div class="photo-upload">
-                    <img id="photoPreview" class="photo-preview" alt="プレビュー">
-                    <input type="file" id="photoInput" accept="image/*" style="display: none;" onchange="previewPhoto(event)">
-                    <button type="button" class="upload-button" onclick="document.getElementById('photoInput').click()">
-                        写真を選択
-                    </button>
-                </div>
-            </div>
             
             <div class="button-group">
                 <button class="btn btn-secondary" onclick="closeCatModal()">キャンセル</button>
@@ -871,20 +861,10 @@
                         </div>
                         
                         <div class="form-group">
-                            <label for="memo-${cat.id}">メモ（任意）</label>
+                            <label for="memo-${cat.id}">メ）</label>
                             <input type="text" id="memo-${cat.id}" placeholder="例: 元気いっぱい">
                         </div>
                         
-                        <div class="form-group">
-                            <label>写真（任意）</label>
-                            <div class="photo-upload">
-                                <img id="recordPhotoPreview-${cat.id}" class="photo-preview" alt="プレビュー">
-                                <input type="file" id="recordPhotoInput-${cat.id}" accept="image/*" style="display: none;" onchange="previewRecordPhoto(event, '${cat.id}')">
-                                <button type="button" class="upload-button" onclick="document.getElementById('recordPhotoInput-${cat.id}').click()">
-                                    写真を選択
-                                </button>
-                            </div>
-                        </div>
                         
                         <button class="btn" onclick="addWeightRecord('${cat.id}')">記録を追加</button>
                     </div>
