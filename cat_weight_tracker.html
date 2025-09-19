@@ -1339,15 +1339,18 @@
             showMessage('PDFファイルをダウンロードしました', 'success');
         }
 
-        // データ保存（ブラウザメモリ内）
-        function saveData() {
-            // 実際のアプリでは、ここでサーバーまたはローカルストレージに保存
+       // データ保存（ブラウザメモリ内）
+            function saveData() {
+            localStorage.setItem('cats', JSON.stringify(cats));
+            localStorage.setItem('weightRecords', JSON.stringify(weightRecords));
+            localStorage.setItem('activeCatId', activeCatId);
         }
-
+        
         // データ読み込み
         function loadData() {
-            // 実際のアプリでは、ここでサーバーまたはローカルストレージから読み込み
-            // 今回は空の状態から開始
+         cats = JSON.parse(localStorage.getItem('cats')) || [];
+        weightRecords = JSON.parse(localStorage.getItem('weightRecords')) || [];
+        activeCatId = localStorage.getItem('activeCatId') || null;
         }
         // モーダルの外側クリックで閉じる
         window.onclick = function(event) {
